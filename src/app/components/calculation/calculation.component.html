@@ -1,0 +1,12 @@
+<div>
+    <input id="amount" [(ngModel)]="amount" placeholder="Check Total">
+    <input id="percent" [(ngModel)]="percent" placeholder="Tip Percentage">
+    <button (click)="calculateTip()">
+        CALCULATE
+    </button>
+    <button (click)="clear()">
+        CLEAR
+    </button>
+</div>
+
+<app-tip-amount [tip]="tip" [alert]="alert"></app-tip-amount>
