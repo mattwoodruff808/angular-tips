@@ -33,7 +33,7 @@ export class CalculationComponent implements OnInit {
 
   clear(): void {
     if (this.tip) {
-      this.tipHistory.push(this.tip);
+      this.tipHistory.unshift(this.tip);
     }
 
     this.amount = '';

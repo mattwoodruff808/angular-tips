@@ -1,14 +1,17 @@
-<div>
-    <input id="amount" [(ngModel)]="amount" placeholder="Check Total">
-    <input id="percent" [(ngModel)]="percent" placeholder="Tip Percentage">
-    <button (click)="calculateTip()">
-        CALCULATE
-    </button>
-    <button (click)="clear()">
-        CLEAR
-    </button>
+<div class="calc-container">
+    <div class="input-container">
+        <input id="amount" [(ngModel)]="amount" placeholder="Check Total">
+        <input id="percent" [(ngModel)]="percent" placeholder="Tip Percentage">
+        <div class="btn-container">
+            <button (click)="calculateTip()">
+                CALCULATE
+            </button>
+            <button (click)="clear()">
+                CLEAR
+            </button>
+        </div>
+    </div>
+    
+    <app-tip-amount [tip]="tip" [alert]="alert"></app-tip-amount>
+    <app-tip-history [tipHistory]="tipHistory"></app-tip-history>
 </div>
-
-<app-tip-amount [tip]="tip" [alert]="alert"></app-tip-amount>
-<app-tip-history [tipHistory]="tipHistory"></app-tip-history>
-<!-- <p *ngFor="let tip of tipHistory">{{ tip }}</p> -->

@@ -1,7 +1,9 @@
-<div *ngIf="tip">
+<div *ngIf="!tip && !alert" class="result-container"></div>
+
+<div *ngIf="tip" class="result-container">
     <p>${{ tip.toFixed(2) }}</p>
 </div>
 
-<div *ngIf="alert">
+<div *ngIf="alert" class="result-container">
     <p>{{ alert }}</p>
 </div>

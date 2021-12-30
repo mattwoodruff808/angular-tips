@@ -1,0 +1,7 @@
+.result-container {
+    height: 60px;
+    width: 308px;
+    border: solid 1px black;
+    text-align: center;
+    margin-top: 25px;
+}
