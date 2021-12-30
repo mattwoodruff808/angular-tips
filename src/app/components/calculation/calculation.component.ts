@@ -10,6 +10,7 @@ export class CalculationComponent implements OnInit {
   percent = '';
   tip?: number | undefined;
   alert?: string | undefined;
+  tipHistory: number[] = [];
 
   ngOnInit(): void {
   }
@@ -19,18 +20,26 @@ export class CalculationComponent implements OnInit {
     const percentIsNumber = /^\d*\.?\d+$/.test(this.percent);
 
     if (amountIsNumber && percentIsNumber) {
+      this.tip = undefined;
+      this.alert = undefined;
       const decimalPercent = Number(this.percent) / 100;
       this.tip = Number(this.amount) * decimalPercent;
     } else {
-      console.log('NOT A NUMBER');
+      this.tip = undefined;
+      this.alert = 'Please Enter a Valid Amount!';
     }
 
   }
 
   clear(): void {
+    if (this.tip) {
+      this.tipHistory.push(this.tip);
+    }
+
     this.amount = '';
     this.percent = '';
     this.tip = undefined;
+    this.alert = undefined;
   }
 
 }

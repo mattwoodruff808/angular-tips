@@ -1,0 +1,5 @@
+<h3>Tip History:</h3>
+
+<div *ngIf="tipHistory">
+    <p *ngFor="let tip of tipHistory">Date: {{ date[0] }} - Amount: ${{ tip.toFixed(2) }}</p>
+</div>
